@@ -83,8 +83,7 @@ class CustomNavbar extends HTMLElement {
                     min-width: 120px;
                     z-index: 100;
                 }
-                .language-selector:hover .language-dropdown,
-                .language-dropdown:hover {
+                .language-selector:hover .language-dropdown {
                     display: block;
                 }
                 .language-dropdown a {
@@ -96,7 +95,7 @@ class CustomNavbar extends HTMLElement {
                 .language-dropdown a:hover {
                     background: #f5f5f5;
                 }
-                .mobile-menu-btn {
+.mobile-menu-btn {
                     display: none;
                     background: none;
                     border: none;
@@ -139,7 +138,7 @@ class CustomNavbar extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <button class="mobile-menu-btn">
+<button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </nav>
