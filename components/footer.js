@@ -96,10 +96,11 @@ class CustomFooter extends HTMLElement {
                         <ul>
                             <li><a href="#pflegefachkraefte">Pflegefachkräfte</a></li>
                             <li><a href="#altenpfleger">Altenpfleger</a></li>
+                            <li><a href="#altenpfleger">Altenpfleger</a></li>
                             <li><a href="#krankenpfleger">Krankenpfleger</a></li>
                             <li><a href="#betreuungskraft">Betreuungskräfte</a></li>
                         </ul>
-                    </div>
+</div>
                     <div class="footer-links">
                         <h3>Über uns</h3>
                         <ul>

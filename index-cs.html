@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRK Cottbus - Pracovní Nabídky</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-red-700 mb-4">Pracovní Nabídky v DRK Cottbus</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hledáme zapálené odborníky pro náš tým. Přihlaste se nyní a staňte se součástí naší komunity!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/1" alt="Odborník v Ošetřovatelství" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Odborníci v Ošetřovatelství (m/ž/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Částečný úvazek/Plný úvazek</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Hledáme kvalifikované odborníky v ošetřovatelství pro naše lůžkové a ambulantní oddělení.</p>
+                    <a href="#odbornici-osetrovatelstvi" class="text-red-600 font-medium hover:text-red-800 transition-colors">Zjistit více →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/2" alt="Geriatrická Sestra" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Geriatrické Sestry (m/ž/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Částečný úvazek/Plný úvazek</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Zapálené geriatrické sestry pro naši péči o seniory v Cottbus a okolí.</p>
+                    <a href="#geriatricke-sestry" class="text-red-600 font-medium hover:text-red-800 transition-colors">Zjistit více →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/3" alt="Zdravotní a Ošetřovatelská Péče" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Odborníci ve Zdravotní a Ošetřovatelské Péči (m/ž/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Částečný úvazek/Plný úvazek</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Odborníci pro péči a podporu pacientů v různých zařízeních.</p>
+                    <a href="#odbornici-zdravotni-pece" class="text-red-600 font-medium hover:text-red-800 transition-colors">Zjistit více →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/4" alt="Asistent Péče" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Asistenti Péče § 43b SGB XI (m/ž/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Částečný úvazek/Plný úvazek</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Podpůrný personál pro péči a asistenci starším osobám.</p>
+                    <a href="#asistenti-pece" class="text-red-600 font-medium hover:text-red-800 transition-colors">Zjistit více →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-red-700 text-white rounded-lg p-8 mb-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Proč pracovat v DRK Cottbus?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center">
+                        <i data-feather="heart" class="w-10 h-10 mb-2"></i>
+                        <p>Smysluplná práce</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="dollar-sign" class="w-10 h-10 mb-2"></i>
+                        <p>Atraktivní odměňování</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="users" class="w-10 h-10 mb-2"></i>
+                        <p>Týmová práce</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="book" class="w-10 h-10 mb-2"></i>
+                        <p>Možnosti školení</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="odbornici-osetrovatelstvi" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Odborníci v Ošetřovatelství (m/ž/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Povinnosti</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Realizace profesionální ošetřovatelské péče podle aktuálních ošetřovatelských vědeckých poznatků</li>
+                        <li>Vytváření a aktualizace plánů ošetřovatelské péče</li>
+                        <li>Dokumentace ošetřovatelských služeb</li>
+                        <li>Instruktáž a poradenství pacientům a příbuzným</li>
+                        <li>Spolupráce v interdisciplinárním týmu</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Požadavky</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukončené vzdělání jako odborník v ošetřovatelství</li>
+                        <li>Profesionální zkušenost žádoucí</li>
+                        <li>Týmová práce a odolnost</li>
+                        <li>Empatie a komunikační dovednosti</li>
+                        <li>Flexibilita a zapojení</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Nabízíme</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modely pracovní doby</h4>
+                        <p class="text-gray-600">Plný úvazek nebo částečný úvazek možný, flexibilní plánování směn</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Odměňování</h4>
+                        <p class="text-gray-600">Atraktivní platba podle kolektivní smlouvy DRK</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Další vzdělávání</h4>
+                        <p class="text-gray-600">Komplexní možnosti dalšího vzdělávání</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Pracovní prostředí</h4>
+                        <p class="text-gray-600">Moderní pracovní nástroje a příjemná pracovní atmosféra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Odborníci v Ošetřovatelství (m/ž/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Přihlásit se nyní
+                </button>
+            </div>
+        </section>
+
+        <section id="geriatricke-sestry" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Geriatrické Sestry (m/ž/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Povinnosti</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Péče a podpora starších osob v lůžkových zařízeních</li>
+                        <li>Podpora při zvládání každodenního života</li>
+                        <li>Realizace ošetřovatelských opatření podle individuálních potřeb</li>
+                        <li>Pozorování a dokumentace zdravotního stavu</li>
+                        <li>Spolupráce s příbuznými a jinými profesními skupinami</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Požadavky</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukončené vzdělání jako geriatrická sestra nebo odborník v ošetřovatelství</li>
+                        <li>Radost z práce se staršími osobami</li>
+                        <li>Trpělivost a empatie</li>
+                        <li>Týmová práce a odolnost</li>
+                        <li>Ochota k práci na směny</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Nabízíme</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modely pracovní doby</h4>
+                        <p class="text-gray-600">Plný úvazek nebo částečný úvazek možný, rodinné směnné plány</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Odměňování</h4>
+                        <p class="text-gray-600">Atraktivní platba podle TVöD</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Další vzdělávání</h4>
+                        <p class="text-gray-600">Pravidelné školení a kvalifikace</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Pracovní prostředí</h4>
+                        <p class="text-gray-600">Moderní, dobře vybavená zařízení péče</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Geriatrické Sestry (m/ž/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Přihlásit se nyní
+                </button>
+            </div>
+        </section>
+
+        <section id="odbornici-zdravotni-pece" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Odborníci ve Zdravotní a Ošetřovatelské Péči (m/ž/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Povinnosti</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Realizace zdravotní ošetřovatelské péče</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Monitorování zdravotního stavu pacientů</li>
+                        <li>Asistence při lékařských zákrocích</li>
+                        <li>Dokumentace ošetřovatelských služeb</li>
+                        <li>Instruktáž a poradenství pacientům a příbuzným</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Požadavky</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukončené vzdělání jako odborník ve zdravotní a ošetřovatelské péči</li>
+                        <li>Profesionální a sociální kompetence</li>
+                        <li>Odpovědnost a spolehlivost</li>
+                        <li>Ochota k práci na směny</li>
+                        <li>Týmová práce a odolnost</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Nabízíme</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modely pracovní doby</h4>
+                        <p class="text-gray-600">Plný úvazek nebo částečný úvazek možný, flexibilní modely směn</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Odměňování</h4>
+                        <p class="text-gray-600">Atraktivní platba podle kolektivní smlouvy DRK</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Další vzdělávání</h4>
+                        <p class="text-gray-600">Komplexní možnosti dalšího vzdělávání</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Pracovní prostředí</h4>
+                        <p class="text-gray-600">Moderní lékařské vybavení a kolegiální tým</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Odborníci ve Zdravotní a Ošetřovatelské Péči (m/ž/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Přihlásit se nyní
+                </button>
+            </div>
+        </section>
+
+        <section id="asistenti-pece" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Asistenti Péče § 43b SGB XI (m/ž/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Povinnosti</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Péče a asistence osobám s demencí nebo duševními chorobami</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Podpora při zvládání každodenního života</li>
+                        <li>Realizace nabídek aktivit</li>
+                        <li>Doprovod při aktivitách mimo domov</li>
+                        <li>Podpora při příjmu potravy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Požadavky</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukončená kvalifikace podle § 43b SGB XI nebo ochota k vzdělávání</li>
+                        <li>Radost z práce se staršími osobami</li>
+                        <li>Kreativita a zapojení</li>
+                        <li>Týmová práce</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Nabízíme</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-4">Nabízíme</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modely pracovní doby</h4>
+                        <p class="text-gray-600">Plný úvazek nebo částečný úvazek možný, flexibilní pracovní doba</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Odměňování</h4>
+                        <p class="text-gray-600">Atraktivní platba podle domovní tarify</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Další vzdělávání</h4>
+                        <p class="text-gray-600">Pravidelné školení a odborné přednášky</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Pracovní prostředí</h4>
+                        <p class="text-gray-600">Rozmanitá práce v příjemné atmosféře</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Asistenti Péče § 43b SGB XI (m/ž/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Přihlásit se nyní
+                </button>
+            </div>
+        </section>
+
+        <!-- Application Form Modal -->
+        <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-gray-800" id="modalTitle">Přihláška na pozici <span id="jobTitle"></span></h3>
+                <button onclick="hideApplicationForm()" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <form id="applicationForm" class="space-y-6">
+                        <input type="hidden" id="selectedJob" name="selectedJob">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="anrede" class="block text-sm font-medium text-gray-700 mb-1">Oslovení*</label>
+                                <select id="anrede" name="anrede" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Prosím vyberte</option>
+                                    <option value="Pan">Pan</option>
+                                    <option value="Paní">Paní</option>
+                                    <option value="Různé">Různé</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="employmentType" class="block text-sm font-medium text-gray-700 mb-1">Typ zaměstnání*</label>
+                                <select id="employmentType" name="employmentType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Prosím vyberte</option>
+                                    <option value="Plný úvazek">Plný úvazek</option>
+                                    <option value="Částečný úvazek">Částečný úvazek</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="vorname" class="block text-sm font-medium text-gray-700 mb-1">Jméno*</label>
+                                <input type="text" id="vorname" name="vorname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="nachname" class="block text-sm font-medium text-gray-700 mb-1">Příjmení*</label>
+                                <input type="text" id="nachname" name="nachname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail*</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="telefon" class="block text-sm font-medium text-gray-700 mb-1">Telefon*</label>
+                                <input type="tel" id="telefon" name="telefon" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="adresse" class="block text-sm font-medium text-gray-700 mb-1">Adresa*</label>
+                                <input type="text" id="telefon" name="telefon" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label for="plz" class="block text-sm font-medium text-gray-700 mb-1">PSČ*</label>
+                                <input type="text" id="plz" name="plz" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="ort" class="block text-sm font-medium text-gray-700 mb-1">Město*</label>
+                                <input type="text" id="ort" name="ort" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="land" class="block text-sm font-medium text-gray-700 mb-1">Země*</label>
+                                <input type="text" id="land" name="land" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Profesionální Pozadí</h4>
+                            <div id="workExperienceContainer">
+                                <div class="work-experience mb-4 p-4 border rounded-lg">
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="arbeitgeber1" class="block text-sm font-medium text-gray-700 mb-1">Zaměstnavatel</label>
+                                            <input type="text" id="arbeitgeber1" name="arbeitgeber[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div>
+                                            <label for="position1" class="block text-sm font-medium text-gray-700 mb-1">Pozice</label>
+                                            <input type="text" id="position1" name="position[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="beschreibung1" class="block text-sm font-medium text-gray-700 mb-1">Popis povinností</label>
+                                            <textarea id="beschreibung1" name="beschreibung[]" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500"></textarea>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="startdatum1" class="block text-sm font-medium text-gray-700 mb-1">Od</label>
+                                            <input type="date" id="startdatum1" name="startdatum[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                            <div>
+                                                <label for="enddatum1" class="block text-sm font-medium text-gray-700 mb-1">Do</label>
+                                            <input type="date" id="enddatum1" name="enddatum[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="addWorkExperience()" class="text-red-600 hover:text-red-800 flex items-center">
+                                <i data-feather="plus-circle" class="mr-2 w-4 h-4"></i> Přidat více pracovních zkušeností
+                            </button>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Vzdělání a Kvalifikace</h4>
+                            <div id="educationContainer">
+                                <div class="education mb-4 p-4 border rounded-lg">
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="bildungseinrichtung1" class="block text-sm font-medium text-gray-700 mb-1">Vzdělávací Instituce</label>
+                                            <input type="text" id="bildungseinrichtung1" name="bildungseinrichtung[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div>
+                                            <label for="abschluss1" class="block text-sm font-medium text-gray-700 mb-1">Absolvování</label>
+                                            <input type="text" id="abschluss1" name="abschluss[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="fachrichtung1" class="block text-sm font-medium text-gray-700 mb-1">Obor</label>
+                                            <input type="text" id="fachrichtung1" name="fachrichtung[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="bildungsstart1" class="block text-sm font-medium text-gray-700 mb-1">Od</label>
+                                            <input type="date" id="bildungsstart1" name="bildungsstart[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                            <div>
+                                                <label for="bildungsende1" class="block text-sm font-medium text-gray-700 mb-1">Do</label>
+                                            <input type="date" id="bildungsende1" name="bildungsende[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="addEducation()" class="text-red-600 hover:text-red-800 flex items-center">
+                                <i data-feather="plus-circle" class="mr-2 w-4 h-4"></i> Přidat více vzdělání
+                            </button>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Nahrávání Dokumentů</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="lebenslauf" class="block text-sm font-medium text-gray-700 mb-1">Životopis (PDF, max. 5MB)</label>
+                                    <input type="file" id="lebenslauf" name="lebenslauf" accept=".pdf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="zeugnisse" class="block text-sm font-medium text-gray-700 mb-1">Osvědčení (PDF, max. 10MB)</label>
+                                    <input type="file" id="zeugnisse" name="zeugnisse" accept=".pdf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="bewerbungsfoto" class="block text-sm font-medium text-gray-700 mb-1">Přihlášovací Fotografie (JPG/PNG, max. 2MB)</label>
+                                    <input type="file" id="bewerbungsfoto" name="bewerbungsfoto" accept=".jpg,.jpeg,.png" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="bewerbungsvideo" class="block text-sm font-medium text-gray-700 mb-1">Přihlášovací Video (volitelné, MP4, max. 20MB)</label>
+                                    <input type="file" id="bewerbungsvideo" name="bewerbungsvideo" accept=".mp4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                    <p class="text-xs text-gray-500 mt-1">Max. 1 minuta délky. Řekněte nám krátce, proč jste ideální pro tuto pozici.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="datenschutz" name="datenschutz" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="datenschutz" class="text-gray-700">Souhlasím se zpracováním mých údajů v souladu se <a href="#" class="text-red-600 hover:text-red-800">ochranou osobních údajů</a>.*</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end space-x-4 pt-4 border-t">
+                            <button type="button" onclick="hideApplicationForm()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                Zrušit
+                            </button>
+                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                    Odeslat přihlášku
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>

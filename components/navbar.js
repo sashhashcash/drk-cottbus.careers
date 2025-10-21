@@ -134,14 +134,9 @@ class CustomNavbar extends HTMLElement {
                             DE
                         </button>
                         <div class="language-dropdown">
-                            <a href="index_en.html" data-lang="en">English</a>
-                            <a href="index_pl.html" data-lang="pl">Polski</a>
-                            <a href="index_cs.html" data-lang="cs">Čeština</a>
-                            <a href="index_ru.html" data-lang="ru">Русский</a>
-                            <a href="index_uk.html" data-lang="uk">Українська</a>
-                            <a href="index_it.html" data-lang="it">Italiano</a>
-                            <a href="index_es.html" data-lang="es">Español</a>
-                            <a href="index_pt.html" data-lang="pt">Português</a>
+                        <a href="index-en.html" data-lang="en">English</a>
+                            <a href="index-pl.html" data-lang="pl">Polski</a>
+                            <a href="index-cs.html" data-lang="cs">Čeština</a>
 </div>
                     </div>
                 </div>

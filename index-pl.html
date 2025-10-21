@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRK Cottbus - Oferty Pracy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-red-700 mb-4">Oferty Pracy w DRK Cottbus</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Poszukujemy zaangażowanych specjalistów do naszego zespołu. Aplikuj teraz i zostań częścią naszej społeczności!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/1" alt="Specjalista Pielęgniarstwa" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Specjaliści Pielęgniarstwa (m/k/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Część etatu/Pełny etat</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Poszukujemy wykwalifikowanych specjalistów pielęgniarstwa dla naszego oddziału stacjonarnego i ambulatoryjnego.</p>
+                    <a href="#specjalisci-pielegniarstwa" class="text-red-600 font-medium hover:text-red-800 transition-colors">Dowiedz się więcej →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/2" alt="Pielęgniarz Opieki Geriatrycznej" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pielęgniarze Geriatryczni (m/k/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Część etatu/Pełny etat</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Zaangażowani pielęgniarze geriatryczni dla naszej opieki nad osobami starszymi w Cottbus i okolicach.</p>
+                    <a href="#pielegniarze-geriatryczni" class="text-red-600 font-medium hover:text-red-800 transition-colors">Dowiedz się więcej →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/3" alt="Specjalista Opieki Zdrowotnej" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Specjaliści Opieki Zdrowotnej i Pielęgniarstwa (m/k/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Część etatu/Pełny etat</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Specjaliści do opieki i wsparcia pacjentów w różnych placówkach.</p>
+                    <a href="#specjalisci-opieki-zdrowotnej" class="text-red-600 font-medium hover:text-red-800 transition-colors">Dowiedz się więcej →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/4" alt="Asystent Opieki" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Asystenci Opieki § 43b SGB XI (m/k/d)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Część etatu/Pełny etat</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Personel wspierający do opieki i asysty osobom starszym.</p>
+                    <a href="#asystenci-opieki" class="text-red-600 font-medium hover:text-red-800 transition-colors">Dowiedz się więcej →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-red-700 text-white rounded-lg p-8 mb-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Dlaczego warto pracować w DRK Cottbus?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center">
+                        <i data-feather="heart" class="w-10 h-10 mb-2"></i>
+                        <p>Praca z sensem</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="dollar-sign" class="w-10 h-10 mb-2"></i>
+                        <p>Atrakcyjne wynagrodzenie</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="users" class="w-10 h-10 mb-2"></i>
+                        <p>Praca zespołowa</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="book" class="w-10 h-10 mb-2"></i>
+                        <p>Możliwości szkoleniowe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="specjalisci-pielegniarstwa" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Specjaliści Pielęgniarstwa (m/k/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Obowiązki</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Realizacja profesjonalnej opieki pielęgniarskiej zgodnie z aktualnymi ustaleniami naukowymi pielęgniarstwa</li>
+                        <li>Tworzenie i aktualizacja planów opieki pielęgniarskiej</li>
+                        <li>Dokumentacja świadczeń pielęgniarskich</li>
+                        <li>Instruowanie i doradzanie pacjentom i krewnym</li>
+                        <li>Współpraca w interdyscyplinarnym zespole</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Wymagania</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukończone szkolenie jako specjalista pielęgniarstwa</li>
+                        <li>Doświadczenie zawodowe pożądane</li>
+                        <li>Umiejętność pracy w zespole i odporność</li>
+                        <li>Empatia i umiejętności komunikacyjne</li>
+                        <li>Elastyczność i zaangażowanie</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Oferujemy</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modele czasu pracy</h4>
+                        <p class="text-gray-600">Pełny etat lub część etatu możliwa, elastyczne planowanie zmian</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Wynagrodzenie</h4>
+                        <p class="text-gray-600">Atrakcyjne wynagrodzenie zgodnie z układem zbiorowym DRK</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Dalsze szkolenie</h4>
+                        <p class="text-gray-600">Wszechstronne możliwości dalszego szkolenia</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Środowisko pracy</h4>
+                        <p class="text-gray-600">Nowoczesne narzędzia pracy i przyjemna atmosfera pracy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Specjaliści Pielęgniarstwa (m/k/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Aplikuj teraz
+                </button>
+            </div>
+        </section>
+
+        <section id="pielegniarze-geriatryczni" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Pielęgniarze Geriatryczni (m/k/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Obowiązki</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Opieka i wsparcie osób starszych w placówkach stacjonarnych</li>
+                        <li>Wsparcie w zarządzaniu codziennym życiem</li>
+                        <li>Realizacja działań pielęgniarskich zgodnie z indywidualnymi potrzebami</li>
+                        <li>Obserwacja i dokumentacja stanu zdrowia</li>
+                        <li>Współpraca z krewnymi i innymi grupami zawodowymi</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Wymagania</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukończone szkolenie jako pielęgniarz geriatryczny lub specjalista pielęgniarstwa</li>
+                        <li>Radość z pracy z osobami starszymi</li>
+                        <li>Cierpliwość i empatia</li>
+                        <li>Umiejętność pracy w zespole i odporność</li>
+                        <li>Gotowość do pracy zmianowej</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Oferujemy</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modele czasu pracy</h4>
+                        <p class="text-gray-600">Pełny etat lub część etatu możliwa, przyjazne dla rodziny harmonogramy zmian</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Wynagrodzenie</h4>
+                        <p class="text-gray-600">Atrakcyjne wynagrodzenie zgodnie z TVöD</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Dalsze szkolenie</h4>
+                        <p class="text-gray-600">Regularne szkolenia i kwalifikacje</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Środowisko pracy</h4>
+                        <p class="text-gray-600">Nowoczesne, dobrze wyposażone placówki opiekuńcze</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Pielęgniarze Geriatryczni (m/k/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Aplikuj teraz
+                </button>
+            </div>
+        </section>
+
+        <section id="specjalisci-opieki-zdrowotnej" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Specjaliści Opieki Zdrowotnej i Pielęgniarstwa (m/k/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Obowiązki</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Realizacja medycznej opieki leczniczej</li>
+                        <li>Monitorowanie stanu zdrowia pacjentów</li>
+                        <li>Asysta przy zabiegach lekarskich</li>
+                        <li>Dokumentacja świadczeń pielęgniarskich</li>
+                        <li>Instruowanie i doradzanie pacjentom i krewnym</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Wymagania</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukończone szkolenie jako specjalista opieki zdrowotnej i pielęgniarstwa</li>
+                        <li>Kompetencje fachowe i społeczne</li>
+                        <li>Odpowiedzialność i niezawodność</li>
+                        <li>Gotowość do pracy zmianowej</li>
+                        <li>Umiejętność pracy w zespole i odporność</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Oferujemy</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modele czasu pracy</h4>
+                        <p class="text-gray-600">Pełny etat lub część etatu możliwa, elastyczne modele zmian</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Wynagrodzenie</h4>
+                        <p class="text-gray-600">Atrakcyjne wynagrodzenie zgodnie z układem zbiorowym DRK</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Dalsze szkolenie</h4>
+                        <p class="text-gray-600">Wszechstronne możliwości dalszego szkolenia</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Środowisko pracy</h4>
+                        <p class="text-gray-600">Nowoczesny sprzęt medyczny i koleżeński zespół</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Specjaliści Opieki Zdrowotnej i Pielęgniarstwa (m/k/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Aplikuj teraz
+                </button>
+            </div>
+        </section>
+
+        <section id="asystenci-opieki" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Asystenci Opieki § 43b SGB XI (m/k/d)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Obowiązki</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Opieka i asysta osobom z demencją lub chorobami psychicznymi</li>
+                        <li>Wsparcie w zarządzaniu codziennym życiem</li>
+                        <li>Realizacja ofert zajęć</li>
+                        <li>Towarzyszenie podczas aktywności poza domem</li>
+                        <li>Wsparcie podczas przyjmowania pokarmu</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Wymagania</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Ukończona kwalifikacja zgodnie z § 43b SGB XI lub gotowość do szkolenia</li>
+                        <li>Radość z pracy z osobami starszymi</li>
+                        <li>Cierpliwość i empatia</li>
+                        <li>Kreatywność i zaangażowanie</li>
+                        <li>Umiejętność pracy w zespole</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Oferujemy</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Modele czasu pracy</h4>
+                        <p class="text-gray-600">Pełny etat lub część etatu możliwa, elastyczne godziny pracy</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Wynagrodzenie</h4>
+                        <p class="text-gray-600">Atrakcyjne wynagrodzenie zgodnie z taryfą domową</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Dalsze szkolenie</h4>
+                        <p class="text-gray-600">Regularne szkolenia i wykłady specjalistyczne</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Środowisko pracy</h4>
+                        <p class="text-gray-600">Różnorodna praca w przyjemnej atmosferze</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Asystenci Opieki § 43b SGB XI (m/k/d)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Aplikuj teraz
+                </button>
+            </div>
+        </section>
+
+        <!-- Application Form Modal -->
+        <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-gray-800" id="modalTitle">Aplikacja na stanowisko <span id="jobTitle"></span></h3>
+                <button onclick="hideApplicationForm()" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <form id="applicationForm" class="space-y-6">
+                        <input type="hidden" id="selectedJob" name="selectedJob">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="anrede" class="block text-sm font-medium text-gray-700 mb-1">Zwrot grzecznościowy*</label>
+                                <select id="anrede" name="anrede" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Proszę wybrać</option>
+                                    <option value="Pan">Pan</option>
+                                    <option value="Pani">Pani</option>
+                                    <option value="Różne">Różne</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="employmentType" class="block text-sm font-medium text-gray-700 mb-1">Rodzaj zatrudnienia*</label>
+                                <select id="employmentType" name="employmentType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Proszę wybrać</option>
+                                    <option value="Pełny etat">Pełny etat</option>
+                                    <option value="Część etatu">Część etatu</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="vorname" class="block text-sm font-medium text-gray-700 mb-1">Imię*</label>
+                                <input type="text" id="vorname" name="vorname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="nachname" class="block text-sm font-medium text-gray-700 mb-1">Nazwisko*</label>
+                                <input type="text" id="nachname" name="nachname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail*</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="telefon" class="block text-sm font-medium text-gray-700 mb-1">Telefon*</label>
+                                <input type="tel" id="telefon" name="telefon" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="adresse" class="block text-sm font-medium text-gray-700 mb-1">Adres*</label>
+                            <input type="text" id="adresse" name="adresse" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label for="plz" class="block text-sm font-medium text-gray-700 mb-1">Kod pocztowy*</label>
+                                <input type="text" id="plz" name="plz" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="ort" class="block text-sm font-medium text-gray-700 mb-1">Miejscowość*</label>
+                                <input type="text" id="ort" name="ort" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="land" class="block text-sm font-medium text-gray-700 mb-1">Kraj*</label>
+                                <input type="text" id="land" name="land" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Historia Zawodowa</h4>
+                            <div id="workExperienceContainer">
+                                <div class="work-experience mb-4 p-4 border rounded-lg">
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="arbeitgeber1" class="block text-sm font-medium text-gray-700 mb-1">Pracodawca</label>
+                                            <input type="text" id="arbeitgeber1" name="arbeitgeber[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div>
+                                            <label for="position1" class="block text-sm font-medium text-gray-700 mb-1">Stanowisko</label>
+                                            <input type="text" id="position1" name="position[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="beschreibung1" class="block text-sm font-medium text-gray-700 mb-1">Opis obowiązków</label>
+                                            <textarea id="beschreibung1" name="beschreibung[]" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500"></textarea>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="startdatum1" class="block text-sm font-medium text-gray-700 mb-1">Od</label>
+                                                <input type="date" id="startdatum1" name="startdatum[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                            <div>
+                                                <label for="enddatum1" class="block text-sm font-medium text-gray-700 mb-1">Do</label>
+                                                <input type="date" id="enddatum1" name="enddatum[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="addWorkExperience()" class="text-red-600 hover:text-red-800 flex items-center">
+                                <i data-feather="plus-circle" class="mr-2 w-4 h-4"></i> Dodaj więcej doświadczenia zawodowego
+                            </button>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Edukacja i Kwalifikacje</h4>
+                            <div id="educationContainer">
+                                <div class="education mb-4 p-4 border rounded-lg">
+                                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <label for="bildungseinrichtung1" class="block text-sm font-medium text-gray-700 mb-1">Instytucja Edukacyjna</label>
+                                            <input type="text" id="bildungseinrichtung1" name="bildungseinrichtung[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div>
+                                            <label for="abschluss1" class="block text-sm font-medium text-gray-700 mb-1">Stopień</label>
+                                            <input type="text" id="abschluss1" name="abschluss[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="fachrichtung1" class="block text-sm font-medium text-gray-700 mb-1">Kierunek</label>
+                                            <input type="text" id="fachrichtung1" name="fachrichtung[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label for="bildungsstart1" class="block text-sm font-medium text-gray-700 mb-1">Od</label>
+                                            <input type="date" id="bildungsstart1" name="bildungsstart[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                            <div>
+                                                <label for="bildungsende1" class="block text-sm font-medium text-gray-700 mb-1">Do</label>
+                                            <input type="date" id="bildungsende1" name="bildungsende[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="addEducation()" class="text-red-600 hover:text-red-800 flex items-center">
+                                <i data-feather="plus-circle" class="mr-2 w-4 h-4"></i> Dodaj więcej edukacji
+                            </button>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Przesyłanie Dokumentów</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="lebenslauf" class="block text-sm font-medium text-gray-700 mb-1">Życiorys (PDF, max. 5MB)</label>
+                                    <input type="file" id="lebenslauf" name="lebenslauf" accept=".pdf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="zeugnisse" class="block text-sm font-medium text-gray-700 mb-1">Świadectwa (PDF, max. 10MB)</label>
+                                    <input type="file" id="zeugnisse" name="zeugnisse" accept=".pdf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="bewerbungsfoto" class="block text-sm font-medium text-gray-700 mb-1">Zdjęcie aplikacyjne (JPG/PNG, max. 2MB)</label>
+                                    <input type="file" id="bewerbungsfoto" name="bewerbungsfoto" accept=".jpg,.jpeg,.png" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                </div>
+                                <div>
+                                    <label for="bewerbungsvideo" class="block text-sm font-medium text-gray-700 mb-1">Wideo aplikacyjne (opcjonalne, MP4, max. 20MB)</label>
+                                    <input type="file" id="bewerbungsvideo" name="bewerbungsvideo" accept=".mp4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                                    <p class="text-xs text-gray-500 mt-1">Maks. 1 minuta długości. Opowiedz nam krótko, dlaczego jesteś idealny na to stanowisko.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="datenschutz" name="datenschutz" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="datenschutz" class="text-gray-700">Wyrażam zgodę na przetwarzanie moich danych zgodnie z <a href="#" class="text-red-600 hover:text-red-800">polityką prywatności</a>.*</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end space-x-4 pt-4 border-t">
+                            <button type="button" onclick="hideApplicationForm()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                Anuluj
+                            </button>
+                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                    Wyślij aplikację
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
