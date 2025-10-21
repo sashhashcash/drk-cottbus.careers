@@ -36,20 +36,21 @@ class CustomNavbar extends HTMLElement {
                 }
                 .language-selector {
                     position: relative;
-                    margin-right: 1rem;
                 }
-                .language-btn {
-                    background: rgba(255, 255, 255, 0.1);
+.language-btn {
                     color: white;
                     border: none;
                     padding: 0.5rem 1rem;
-                    border-radius: 4px;
                     cursor: pointer;
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
+                    transition: opacity 0.2s;
                 }
-                .language-dropdown {
+                .language-btn:hover {
+                    opacity: 0.8;
+                }
+.language-dropdown {
                     position: absolute;
                     top: 100%;
                     right: 0;
@@ -109,23 +110,25 @@ class CustomNavbar extends HTMLElement {
                         <span class="logo-subtext">Stellenangebote</span>
                     </div>
                 </div>
-                <div class="language-selector">
-                    <button class="language-btn">
-                        <i data-feather="globe"></i>
-                        DE
-                    </button>
-                    <div class="language-dropdown">
-                        <a href="#" data-lang="en">English</a>
-                        <a href="#" data-lang="pl">Polski</a>
-                        <a href="#" data-lang="cs">Čeština</a>
-                        <a href="#" data-lang="ru">Русский</a>
-                        <a href="#" data-lang="uk">Українська</a>
-                        <a href="#" data-lang="it">Italiano</a>
-                        <a href="#" data-lang="es">Español</a>
-                        <a href="#" data-lang="pt">Português</a>
+                <div class="flex items-center gap-4">
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <i data-feather="globe"></i>
+                            DE
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="pl">Polski</a>
+                            <a href="#" data-lang="cs">Čeština</a>
+                            <a href="#" data-lang="ru">Русский</a>
+                            <a href="#" data-lang="uk">Українська</a>
+                            <a href="#" data-lang="it">Italiano</a>
+                            <a href="#" data-lang="es">Español</a>
+                            <a href="#" data-lang="pt">Português</a>
+                        </div>
                     </div>
+                    <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
                 </div>
-                <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
