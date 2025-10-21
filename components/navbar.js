@@ -1,8 +1,9 @@
+
 class CustomNavbar extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-            <style>
+<style>
                 nav {
                     background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
                     padding: 1rem 2rem;
@@ -86,10 +87,11 @@ class CustomNavbar extends HTMLElement {
                     z-index: 100;
                     padding: 0.5rem 0;
                 }
-                .language-selector:hover .language-dropdown {
+                .language-selector:hover .language-dropdown,
+                .language-dropdown:hover {
                     display: block;
                 }
-                .language-dropdown a {
+.language-dropdown a {
                     display: block;
                     padding: 0.5rem 1rem;
                     color: #333;
@@ -99,7 +101,7 @@ class CustomNavbar extends HTMLElement {
                 .language-dropdown a:hover {
                     background: #f5f5f5;
                 }
-.mobile-menu-btn {
+                .mobile-menu-btn {
                     display: none;
                     background: none;
                     border: none;
@@ -114,7 +116,7 @@ class CustomNavbar extends HTMLElement {
                         display: block;
                     }
                 }
-</style>
+            </style>
             <nav>
                 <div class="logo-container">
                     <img src="https://www.drk.de/fileadmin/_processed_/3/1/csm_drk-logo_web_2c8c9b1a75.png" alt="DRK Logo" class="logo-img">
@@ -142,11 +144,32 @@ class CustomNavbar extends HTMLElement {
                         </div>
                     </div>
                 </div>
-<button class="mobile-menu-btn">
+                <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </nav>
-`;
+        `;
+        
+        // Add event listeners for language selection
+        const languageLinks = this.shadowRoot.querySelectorAll('.language-dropdown a');
+        const languageBtn = this.shadowRoot.querySelector('.language-btn');
+        
+        languageLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const langText = this.textContent;
+                languageBtn.innerHTML = `
+                    <i data-feather="globe"></i>
+                    ${lang.toUpperCase()}
+                `;
+                // Re-render feather icons
+                if (window.feather) {
+                    window.feather.replace({ 'aria-hidden': 'true' });
+                }
+                console.log('Switching to language:', lang);
+            });
+        });
     }
 }
 customElements.define('custom-navbar', CustomNavbar);
