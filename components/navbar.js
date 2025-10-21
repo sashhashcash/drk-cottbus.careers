@@ -55,6 +55,8 @@ class CustomNavbar extends HTMLElement {
                 }
                 .language-selector {
                     position: relative;
+                    padding: 0.5rem;
+                    margin: -0.5rem;
                 }
                 .language-btn {
                     background-color: rgba(255, 255, 255, 0.2);
@@ -74,17 +76,17 @@ class CustomNavbar extends HTMLElement {
                 }
                 .language-dropdown {
                     position: absolute;
-                    top: calc(100% + 0.5rem);
+                    top: calc(100% + 0.75rem);
                     right: 0;
                     background: white;
                     border-radius: 4px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                     display: none;
-                    min-width: 120px;
+                    min-width: 140px;
                     z-index: 100;
+                    padding: 0.5rem 0;
                 }
-                .language-selector:hover .language-dropdown,
-                .language-dropdown:hover {
+                .language-selector:hover .language-dropdown {
                     display: block;
                 }
                 .language-dropdown a {
@@ -92,6 +94,7 @@ class CustomNavbar extends HTMLElement {
                     padding: 0.5rem 1rem;
                     color: #333;
                     text-decoration: none;
+                    transition: background 0.2s;
                 }
                 .language-dropdown a:hover {
                     background: #f5f5f5;
