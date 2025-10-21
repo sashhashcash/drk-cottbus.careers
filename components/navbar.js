@@ -37,18 +37,22 @@ class CustomNavbar extends HTMLElement {
                 .language-selector {
                     position: relative;
                 }
-.language-btn {
-                    color: white;
-                    border: none;
-                    padding: 0.5rem 1rem;
-                    cursor: pointer;
+                .language-btn {
+                    background-color: white;
+                    color: #dc2626;
+                    padding: 0.5rem 1.5rem;
+                    border-radius: 9999px;
+                    font-weight: 600;
+                    transition: all 0.2s;
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    transition: opacity 0.2s;
+                    border: none;
+                    cursor: pointer;
                 }
                 .language-btn:hover {
-                    opacity: 0.8;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 }
 .language-dropdown {
                     position: absolute;
@@ -110,7 +114,7 @@ class CustomNavbar extends HTMLElement {
                         <span class="logo-subtext">Stellenangebote</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-6">
                     <div class="language-selector">
                         <button class="language-btn">
                             <i data-feather="globe"></i>
