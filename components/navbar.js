@@ -83,7 +83,8 @@ class CustomNavbar extends HTMLElement {
                     min-width: 120px;
                     z-index: 100;
                 }
-                .language-selector:hover .language-dropdown {
+                .language-selector:hover .language-dropdown,
+                .language-dropdown:hover {
                     display: block;
                 }
                 .language-dropdown a {
