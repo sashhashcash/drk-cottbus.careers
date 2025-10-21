@@ -128,28 +128,61 @@ class CustomNavbar extends HTMLElement {
                 </div>
                 <div class="nav-buttons">
                     <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
-                    <div class="language-selector">
-                        <button class="language-btn">
-                            <i data-feather="globe"></i>
-                            DE
-                        </button>
-                        <div class="language-dropdown">
-                        <a href="index-en.html" data-lang="en">English</a>
-                            <a href="index-pl.html" data-lang="pl">Polski</a>
-                            <a href="index-cs.html" data-lang="cs">Čeština</a>
+        <div class="language-selector">
+            <button class="language-btn">
+                <i data-feather="globe"></i>
+                <span class="current-lang">DE</span>
+            </button>
+            <div class="language-dropdown">
+                <a href="index.html" data-lang="de">Deutsch</a>
+                <a href="index-en.html" data-lang="en">English</a>
+                <a href="index-pl.html" data-lang="pl">Polski</a>
+                <a href="index-cs.html" data-lang="cs">Čeština</a>
+                <a href="index-pt.html" data-lang="pt">Português</a>
+                <a href="index-es.html" data-lang="es">Español</a>
+                <a href="index-it.html" data-lang="it">Italiano</a>
+                <a href="index-ru.html" data-lang="ru">Русский</a>
+                <a href="index-uk.html" data-lang="uk">Українська</a>
+            </div>
 </div>
-                    </div>
                 </div>
                 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </nav>
         `;
-        
-        // Add event listeners for language selection
+        // Language selector functionality
         const languageBtn = this.shadowRoot.querySelector('.language-btn');
         const languageDropdown = this.shadowRoot.querySelector('.language-dropdown');
         const languageLinks = this.shadowRoot.querySelectorAll('.language-dropdown a');
+        const currentLangSpan = this.shadowRoot.querySelector('.current-lang');
+        
+        // Set initial language based on current page
+        const langMap = {
+            'de': 'DE',
+            'en': 'EN',
+            'pl': 'PL',
+            'cs': 'CS',
+            'pt': 'PT',
+            'es': 'ES',
+            'it': 'IT',
+            'ru': 'RU',
+            'uk': 'UK'
+        };
+        
+        // Detect current language from URL
+        let currentLang = 'de';
+        const path = window.location.pathname;
+        if (path.includes('-en.')) currentLang = 'en';
+        else if (path.includes('-pl.')) currentLang = 'pl';
+        else if (path.includes('-cs.')) currentLang = 'cs';
+        else if (path.includes('-pt.')) currentLang = 'pt';
+        else if (path.includes('-es.')) currentLang = 'es';
+        else if (path.includes('-it.')) currentLang = 'it';
+        else if (path.includes('-ru.')) currentLang = 'ru';
+        else if (path.includes('-uk.')) currentLang = 'uk';
+        
+        currentLangSpan.textContent = langMap[currentLang] || 'DE';
         
         // Toggle dropdown on button click
         languageBtn.addEventListener('click', function(e) {
@@ -163,26 +196,24 @@ class CustomNavbar extends HTMLElement {
                 e.preventDefault();
                 e.stopPropagation();
                 const lang = this.getAttribute('data-lang');
-                const langText = this.textContent;
-                languageBtn.innerHTML = `
-                    <i data-feather="globe"></i>
-                    ${lang.toUpperCase()}
-                `;
+                currentLangSpan.textContent = langMap[lang] || 'DE';
                 languageDropdown.classList.remove('show');
-                // Re-render feather icons
-                if (window.feather) {
-                    window.feather.replace({ 'aria-hidden': 'true' });
-                }
-                console.log('Switching to language:', lang);
-            });
+                
+                // Store selected language in localStorage
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // Navigate to selected language page
+                window.location.href = this.getAttribute('href');
+});
         });
-        
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
-            if (!languageDropdown.contains(e.target) && e.target !== languageBtn) {
+            const isClickInside = languageBtn.contains(e.target) || 
+                                languageDropdown.contains(e.target);
+            if (!isClickInside) {
                 languageDropdown.classList.remove('show');
             }
-        });
+});
     }
 }
 customElements.define('custom-navbar', CustomNavbar);
