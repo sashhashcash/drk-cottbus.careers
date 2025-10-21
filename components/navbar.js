@@ -36,7 +36,7 @@ class CustomNavbar extends HTMLElement {
                 }
                 .language-selector {
                     position: relative;
-                    margin-left: 1.5rem;
+                    margin-right: 20px;
                 }
                 .language-btn {
                     background-color: white;
@@ -50,6 +50,7 @@ class CustomNavbar extends HTMLElement {
                     gap: 0.5rem;
                     border: none;
                     cursor: pointer;
+                    height: 100%;
                 }
                 .language-btn:hover {
                     transform: translateY(-2px);
@@ -66,8 +67,12 @@ class CustomNavbar extends HTMLElement {
                     min-width: 120px;
                     z-index: 100;
                 }
-.language-dropdown a {
+                .language-selector:hover .language-dropdown,
+                .language-dropdown:hover {
                     display: block;
+                }
+                .language-dropdown a {
+display: block;
                     padding: 0.5rem 1rem;
                     color: #333;
                     text-decoration: none;
@@ -116,6 +121,7 @@ background-color: white;
                     </div>
                 </div>
                 <div class="flex items-center gap-6">
+                    <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
                     <div class="language-selector">
                         <button class="language-btn">
                             <i data-feather="globe"></i>
@@ -132,8 +138,7 @@ background-color: white;
                             <a href="#" data-lang="pt">Português</a>
                         </div>
                     </div>
-                    <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
-                </div>
+</div>
 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
