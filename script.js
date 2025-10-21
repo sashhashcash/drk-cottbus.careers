@@ -1,7 +1,6 @@
 
 let workExperienceCounter = 1;
 let educationCounter = 1;
-
 // Language selector functionality
 document.addEventListener('DOMContentLoaded', function() {
     const languageLinks = document.querySelectorAll('.language-dropdown a');

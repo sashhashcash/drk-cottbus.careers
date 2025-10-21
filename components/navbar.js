@@ -34,14 +34,32 @@ class CustomNavbar extends HTMLElement {
                     font-weight: 400;
                     opacity: 0.8;
                 }
-                .language-selector {
-                    position: relative;
-                    margin-right: 20px;
+                .nav-buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
                 }
-                .language-btn {
+                .apply-btn {
                     background-color: white;
                     color: #dc2626;
                     padding: 0.5rem 1.5rem;
+                    border-radius: 9999px;
+                    font-weight: 600;
+                    transition: all 0.2s;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+                .apply-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .language-selector {
+                    position: relative;
+                }
+                .language-btn {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    color: white;
+                    padding: 0.5rem 1rem;
                     border-radius: 9999px;
                     font-weight: 600;
                     transition: all 0.2s;
@@ -50,16 +68,14 @@ class CustomNavbar extends HTMLElement {
                     gap: 0.5rem;
                     border: none;
                     cursor: pointer;
-                    height: 100%;
                 }
                 .language-btn:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    background-color: rgba(255, 255, 255, 0.3);
                 }
                 .language-dropdown {
                     position: absolute;
                     top: calc(100% + 0.5rem);
-                    left: 0;
+                    right: 0;
                     background: white;
                     border-radius: 4px;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -72,29 +88,13 @@ class CustomNavbar extends HTMLElement {
                     display: block;
                 }
                 .language-dropdown a {
-display: block;
+                    display: block;
                     padding: 0.5rem 1rem;
                     color: #333;
                     text-decoration: none;
                 }
                 .language-dropdown a:hover {
                     background: #f5f5f5;
-                }
-                .language-selector:hover .language-dropdown {
-                    display: block;
-                }
-                .apply-btn {
-background-color: white;
-                    color: #dc2626;
-                    padding: 0.5rem 1.5rem;
-                    border-radius: 9999px;
-                    font-weight: 600;
-                    transition: all 0.2s;
-                    margin-left: 2rem;
-                }
-                .apply-btn:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 }
                 .mobile-menu-btn {
                     display: none;
@@ -104,7 +104,7 @@ background-color: white;
                     cursor: pointer;
                 }
                 @media (max-width: 768px) {
-                    .language-selector, .apply-btn {
+                    .nav-buttons {
                         display: none;
                     }
                     .mobile-menu-btn {
@@ -120,7 +120,7 @@ background-color: white;
                         <span class="logo-subtext">Stellenangebote</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-6">
+                <div class="nav-buttons">
                     <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
                     <div class="language-selector">
                         <button class="language-btn">
@@ -138,12 +138,12 @@ background-color: white;
                             <a href="#" data-lang="pt">Português</a>
                         </div>
                     </div>
-</div>
-<button class="mobile-menu-btn">
+                </div>
+                <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </nav>
-        `;
+`;
     }
 }
 customElements.define('custom-navbar', CustomNavbar);
