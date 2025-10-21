@@ -88,7 +88,8 @@ class CustomNavbar extends HTMLElement {
                     padding: 0.5rem 0;
                 }
                 .language-selector:hover .language-dropdown,
-                .language-dropdown:hover {
+                .language-dropdown:hover,
+                .language-dropdown.show {
                     display: block;
                 }
 .language-dropdown a {
@@ -151,24 +152,41 @@ class CustomNavbar extends HTMLElement {
         `;
         
         // Add event listeners for language selection
-        const languageLinks = this.shadowRoot.querySelectorAll('.language-dropdown a');
         const languageBtn = this.shadowRoot.querySelector('.language-btn');
+        const languageDropdown = this.shadowRoot.querySelector('.language-dropdown');
+        const languageLinks = this.shadowRoot.querySelectorAll('.language-dropdown a');
         
+        // Toggle dropdown on button click
+        languageBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('show');
+        });
+        
+        // Handle language selection
         languageLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
                 const lang = this.getAttribute('data-lang');
                 const langText = this.textContent;
                 languageBtn.innerHTML = `
                     <i data-feather="globe"></i>
                     ${lang.toUpperCase()}
                 `;
+                languageDropdown.classList.remove('show');
                 // Re-render feather icons
                 if (window.feather) {
                     window.feather.replace({ 'aria-hidden': 'true' });
                 }
                 console.log('Switching to language:', lang);
             });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!languageDropdown.contains(e.target) && e.target !== languageBtn) {
+                languageDropdown.classList.remove('show');
+            }
         });
     }
 }
