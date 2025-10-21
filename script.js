@@ -1,6 +1,28 @@
+
 let workExperienceCounter = 1;
 let educationCounter = 1;
 
+// Language selector functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const languageLinks = document.querySelectorAll('.language-dropdown a');
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            // Here you would normally implement language change
+            // For now we'll just update the button text
+            const langText = this.textContent;
+            document.querySelector('.language-btn').innerHTML = `
+                <i data-feather="globe"></i>
+                ${lang.toUpperCase()}
+            `;
+            feather.replace();
+            
+            // TODO: Implement actual language switching
+            console.log('Switching to language:', lang);
+        });
+    });
+});
 function showApplicationForm(jobTitle) {
     document.getElementById('jobTitle').textContent = jobTitle;
     document.getElementById('selectedJob').value = jobTitle;

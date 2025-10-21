@@ -34,33 +34,45 @@ class CustomNavbar extends HTMLElement {
                     font-weight: 400;
                     opacity: 0.8;
                 }
-                .nav-links {
-                    display: flex;
-                    gap: 2rem;
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
-                }
-                .nav-link {
-                    color: white;
-                    text-decoration: none;
-                    font-weight: 500;
-                    padding: 0.5rem 0;
+                .language-selector {
                     position: relative;
+                    margin-right: 1rem;
+                }
+                .language-btn {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 4px;
+                    cursor: pointer;
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                 }
-                .nav-link:hover::after {
-                    content: '';
+                .language-dropdown {
                     position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 2px;
-                    background-color: white;
+                    top: 100%;
+                    right: 0;
+                    background: white;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    display: none;
+                    min-width: 120px;
+                    z-index: 100;
                 }
-                .apply-btn {
+                .language-dropdown a {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    color: #333;
+                    text-decoration: none;
+                }
+                .language-dropdown a:hover {
+                    background: #f5f5f5;
+                }
+                .language-selector:hover .language-dropdown {
+                    display: block;
+                }
+.apply-btn {
                     background-color: white;
                     color: #dc2626;
                     padding: 0.5rem 1.5rem;
@@ -81,14 +93,14 @@ class CustomNavbar extends HTMLElement {
                     cursor: pointer;
                 }
                 @media (max-width: 768px) {
-                    .nav-links, .apply-btn {
+                    .language-selector, .apply-btn {
                         display: none;
                     }
                     .mobile-menu-btn {
                         display: block;
                     }
                 }
-            </style>
+</style>
             <nav>
                 <div class="logo-container">
                     <img src="https://www.drk.de/fileadmin/_processed_/3/1/csm_drk-logo_web_2c8c9b1a75.png" alt="DRK Logo" class="logo-img">
@@ -97,14 +109,24 @@ class CustomNavbar extends HTMLElement {
                         <span class="logo-subtext">Stellenangebote</span>
                     </div>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-link"><i data-feather="home"></i>Startseite</a></li>
-                    <li><a href="#pflegefachkraefte" class="nav-link"><i data-feather="heart"></i>Stellen</a></li>
-                    <li><a href="#" class="nav-link"><i data-feather="info"></i>Über uns</a></li>
-                    <li><a href="#" class="nav-link"><i data-feather="mail"></i>Kontakt</a></li>
-                </ul>
+                <div class="language-selector">
+                    <button class="language-btn">
+                        <i data-feather="globe"></i>
+                        DE
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" data-lang="en">English</a>
+                        <a href="#" data-lang="pl">Polski</a>
+                        <a href="#" data-lang="cs">Čeština</a>
+                        <a href="#" data-lang="ru">Русский</a>
+                        <a href="#" data-lang="uk">Українська</a>
+                        <a href="#" data-lang="it">Italiano</a>
+                        <a href="#" data-lang="es">Español</a>
+                        <a href="#" data-lang="pt">Português</a>
+                    </div>
+                </div>
                 <a href="#pflegefachkraefte" class="apply-btn">Jetzt bewerben</a>
-                <button class="mobile-menu-btn">
+<button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </nav>
