@@ -36,6 +36,7 @@ class CustomNavbar extends HTMLElement {
                 }
                 .language-selector {
                     position: relative;
+                    margin-left: 1.5rem;
                 }
                 .language-btn {
                     background-color: white;
@@ -54,10 +55,10 @@ class CustomNavbar extends HTMLElement {
                     transform: translateY(-2px);
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 }
-.language-dropdown {
+                .language-dropdown {
                     position: absolute;
-                    top: 100%;
-                    right: 0;
+                    top: calc(100% + 0.5rem);
+                    left: 0;
                     background: white;
                     border-radius: 4px;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -65,7 +66,7 @@ class CustomNavbar extends HTMLElement {
                     min-width: 120px;
                     z-index: 100;
                 }
-                .language-dropdown a {
+.language-dropdown a {
                     display: block;
                     padding: 0.5rem 1rem;
                     color: #333;
@@ -77,8 +78,8 @@ class CustomNavbar extends HTMLElement {
                 .language-selector:hover .language-dropdown {
                     display: block;
                 }
-.apply-btn {
-                    background-color: white;
+                .apply-btn {
+background-color: white;
                     color: #dc2626;
                     padding: 0.5rem 1.5rem;
                     border-radius: 9999px;
