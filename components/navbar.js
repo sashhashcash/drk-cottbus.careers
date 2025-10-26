@@ -156,7 +156,6 @@ class CustomNavbar extends HTMLElement {
         const languageDropdown = this.shadowRoot.querySelector('.language-dropdown');
         const languageLinks = this.shadowRoot.querySelectorAll('.language-dropdown a');
         const currentLangSpan = this.shadowRoot.querySelector('.current-lang');
-        
         // Set initial language based on current page
         const langMap = {
             'de': 'DE',
@@ -173,18 +172,17 @@ class CustomNavbar extends HTMLElement {
         // Detect current language from URL
         let currentLang = 'de';
         const path = window.location.pathname;
-        if (path.includes('-en.')) currentLang = 'en';
-        else if (path.includes('-pl.')) currentLang = 'pl';
-        else if (path.includes('-cs.')) currentLang = 'cs';
-        else if (path.includes('-pt.')) currentLang = 'pt';
-        else if (path.includes('-es.')) currentLang = 'es';
-        else if (path.includes('-it.')) currentLang = 'it';
-        else if (path.includes('-ru.')) currentLang = 'ru';
-        else if (path.includes('-uk.')) currentLang = 'uk';
+        if (path.includes('index-en')) currentLang = 'en';
+        else if (path.includes('index-pl')) currentLang = 'pl';
+        else if (path.includes('index-cs')) currentLang = 'cs';
+        else if (path.includes('index-pt')) currentLang = 'pt';
+        else if (path.includes('index-es')) currentLang = 'es';
+        else if (path.includes('index-it')) currentLang = 'it';
+        else if (path.includes('index-ru')) currentLang = 'ru';
+        else if (path.includes('index-uk')) currentLang = 'uk';
         
         currentLangSpan.textContent = langMap[currentLang] || 'DE';
-        
-        // Toggle dropdown on button click
+// Toggle dropdown on button click
         languageBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             languageDropdown.classList.toggle('show');
