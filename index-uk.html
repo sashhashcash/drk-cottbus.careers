@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRK Коттбус - Вакансії</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-red-700 mb-4">Вакансії в DRK Коттбус</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ми шукаємо відданих професіоналів для нашої команди. Подайте заявку зараз і станьте частиною нашої спільноти!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/1" alt="Спеціаліст з догляду" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Спеціалісти з догляду (ч/ж/ін)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Неповний робочий день/Повний робочий день</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Ми шукаємо кваліфікованих спеціалістів з догляду для наших стаціонарних та амбулаторних відділень.</p>
+                    <a href="#specialisty-doglyad" class="text-red-600 font-medium hover:text-red-800 transition-colors">Дізнатися більше →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/2" alt="Медсестра геронтології" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Медсестри геронтології (ч/ж/ін)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Неповний робочий день/Повний робочий день</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Віддані своїй справі медсестри геронтології для нашого догляду за літніми людьми в Коттбусі та околицях.</p>
+                    <a href="#medsestry-gerontologii" class="text-red-600 font-medium hover:text-red-800 transition-colors">Дізнатися більше →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/medical/640x360/3" alt="Медичний персонал" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Професіонали охорони здоров'я та догляду (ч/ж/ін)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Неповний робочий день/Повний робочий день</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Кваліфіковані спеціалісти для догляду та підтримки пацієнтів у різних закладах.</p>
+                    <a href="#professionalny-ohorona-zdorovya" class="text-red-600 font-medium hover:text-red-800 transition-colors">Дізнатися більше →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <img src="http://static.photos/people/640x360/4" alt="Помічник з догляду" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Помічники з догляду § 43b SGB XI (ч/ж/ін)</h3>
+                    <div class="flex gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Неповний робочий день/Повний робочий день</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Допоміжний персонал для догляду та допомоги літнім людям.</p>
+                    <a href="#pomichnyky-doglyad" class="text-red-600 font-medium hover:text-red-800 transition-colors">Дізнатися більше →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-red-700 text-white rounded-lg p-8 mb-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Чому працювати в DRK Коттбус?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center">
+                        <i data-feather="heart" class="w-10 h-10 mb-2"></i>
+                        <p>Змістовна робота</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="dollar-sign" class="w-10 h-10 mb-2"></i>
+                        <p>Приваблива компенсація</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="users" class="w-10 h-10 mb-2"></i>
+                        <p>Командна робота</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i data-feather="book" class="w-10 h-10 mb-2"></i>
+                        <p>Можливості навчання</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="specialisty-doglyad" class="mb-12 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Спеціалісти з догляду (ч/ж/ін)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Обов'язки</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Професійний догляд відповідно до поточних наукових знань</li>
+                        <li>Створення та оновлення планів догляду</li>
+                        <li>Документація послуг догляду</li>
+                        <li>Інструктаж та консультація пацієнтів та родичів</li>
+                        <li>Співпраця в міждисциплінарній команді</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Вимоги</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                        <li>Завершене навчання як спеціаліст з догляду</li>
+                        <li>Професійний досвід бажаний</li>
+                        <li>Командна робота та стійкість</li>
+                        <li>Емпатія та комунікативні навички</li>
+                        <li>Гнучкість та відданість справі</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Ми пропонуємо</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Моделі робочого часу</h4>
+                        <p class="text-gray-600">Повна або неповна зайнятість можлива, гнучке планування змін</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Компенсація</h4>
+                        <p class="text-gray-600">Приваблива оплата відповідно до колективного договору DRK</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Подальше навчання</h4>
+                        <p class="text-gray-600">Розширені можливості подальшого навчання</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-gray-700 mb-2">Робоче середовище</h4>
+                        <p class="text-gray-600">Сучасні інструменти та приємна робоча атмосфера</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="showApplicationForm('Спеціалісти з догляду (ч/ж/ін)')" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    Подати заявку зараз
+                </button>
+            </div>
+        </section>
+
+        <!-- Application Form Modal -->
+        <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-gray-800" id="modalTitle">Заявка на посаду <span id="jobTitle"></span></h3>
+                    <button onclick="hideApplicationForm()" class="text-gray-500 hover:text-gray-700">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <form id="applicationForm" class="space-y-6">
+                        <input type="hidden" id="selectedJob" name="selectedJob">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="anrede" class="block text-sm font-medium text-gray-700 mb-1">Звертання*</label>
+                                <select id="anrede" name="anrede" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Будь ласка, виберіть</option>
+                                    <option value="Пан">Пан</option>
+                                    <option value="Пані">Пані</option>
+                                    <option value="Інше">Інше</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="employmentType" class="block text-sm font-medium text-gray-700 mb-1">Тип зайнятості*</label>
+                                <select id="employmentType" name="employmentType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Будь ласка, виберіть</option>
+                                    <option value="Повна зайнятість">Повна зайнятість</option>
+                                    <option value="Неповна зайнятість">Неповна зайнятість</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="vorname" class="block text-sm font-medium text-gray-700 mb-1">Ім'я*</label>
+                                <input type="text" id="vorname" name="vorname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="nachname" class="block text-sm font-medium text-gray-700 mb-1">Прізвище*</label>
+                                <input type="text" id="nachname" name="nachname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="telefon" class="block text-sm font-medium text-gray-700 mb-1">Телефон*</label>
+                                <input type="tel" id="telefon" name="telefon" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="adresse" class="block text-sm font-medium text-gray-700 mb-1">Адреса*</label>
+                            <input type="text" id="adresse" name="adresse" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label for="plz" class="block text-sm font-medium text-gray-700 mb-1">Індекс*</label>
+                                <input type="text" id="plz" name="plz" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="ort" class="block text-sm font-medium text-gray-700 mb-1">Місто*</label>
+                                <input type="text" id="ort" name="ort" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                            <div>
+                                <label for="land" class="block text-sm font-medium text-gray-700 mb-1">Країна*</label>
+                                <input type="text" id="land" name="land" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="datenschutz" name="datenschutz" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="datenschutz" class="text-gray-700">Я згоден на обробку моїх даних відповідно до <a href="#" class="text-red-600 hover:text-red-800">політики конфіденційності</a>.*</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end space-x-4 pt-4 border-t">
+                            <button type="button" onclick="hideApplicationForm()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                Скасувати
+                            </button>
+                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                Надіслати заявку
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
