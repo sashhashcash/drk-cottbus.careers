@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRK Jobportal | Admin</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../components/navbar.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+    <script src="assets/admin.js" type="module" defer></script>
+</head>
+<body class="bg-gray-100 font-inter min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-1 container mx-auto px-4 py-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <header class="bg-red-700 text-white px-6 py-5 flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold">Adminbereich</h1>
+                        <p class="text-sm text-red-100">Verwalten Sie Bewerbungen aus allen Sprachversionen.</p>
+                    </div>
+                    <button id="logoutButton" class="hidden text-sm font-semibold bg-white text-red-700 px-4 py-2 rounded-full hover:bg-red-50 transition">
+                        <i data-feather="log-out" class="w-4 h-4 inline-block mr-2"></i>
+                        Abmelden
+                    </button>
+                </header>
+
+                <section id="loginSection" class="px-6 py-10 space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Anmeldung</h2>
+                        <p class="text-sm text-gray-600">Bitte geben Sie Ihre Zugangsdaten ein.</p>
+                    </div>
+                    <form id="loginForm" class="space-y-4">
+                        <div>
+                            <label for="adminEmail" class="block text-sm font-medium text-gray-700 mb-1">E-Mail Adresse</label>
+                            <input type="email" id="adminEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required placeholder="admin@drk-cottbus.de">
+                        </div>
+                        <div>
+                            <label for="adminPassword" class="block text-sm font-medium text-gray-700 mb-1">Passwort</label>
+                            <input type="password" id="adminPassword" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-colors flex items-center justify-center">
+                            <i data-feather="log-in" class="w-4 h-4 mr-2"></i>
+                            Anmelden
+                        </button>
+                        <p id="loginError" class="text-sm text-red-600 hidden"></p>
+                        <p class="text-sm text-gray-500">
+                            <a href="../index.html" class="text-red-600 hover:text-red-800 inline-flex items-center gap-1">
+                                <i data-feather="arrow-left" class="w-3 h-3"></i>
+                                Zurück zur Startseite
+                            </a>
+                        </p>
+                    </form>
+                </section>
+
+                <section id="dashboardSection" class="hidden">
+                    <div class="px-6 py-6 border-b bg-gray-50">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <h2 class="text-xl font-semibold text-gray-800">Bewerbungen</h2>
+                                <p class="text-sm text-gray-600">Gesamt: <span id="applicationCount">0</span></p>
+                            </div>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="relative">
+                                    <input type="search" id="searchInput" placeholder="Suchen nach Name, Job oder E-Mail" class="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-red-500 focus:border-red-500 w-72">
+                                    <i data-feather="search" class="w-4 h-4 text-gray-400 absolute left-3 top-2.5"></i>
+                                </div>
+                                <select id="languageFilter" class="px-4 py-2 border border-gray-300 rounded-full focus:ring-red-500 focus:border-red-500">
+                                    <option value="">Alle Sprachen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dashboardMessageWrapper" class="hidden px-6 pt-4">
+                        <div id="dashboardMessage" class="rounded-lg border px-4 py-3 text-sm"></div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Eingang</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Position</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Sprache</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Deutsch-Niveau</th>
+                                    <th class="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicationTable" class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td colspan="7" class="px-6 py-8 text-center text-gray-500" id="tableEmptyState">
+                                        <div class="flex flex-col items-center gap-3">
+                                            <i data-feather="inbox" class="w-10 h-10 text-gray-300"></i>
+                                            <p>Noch keine Bewerbungen eingegangen.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div id="applicationModal" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b px-6 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900">Bewerbungsdetails</h3>
+                    <p class="text-sm text-gray-500 flex flex-wrap items-center gap-2" id="modalMeta"></p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="downloadApplicationButton" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:text-red-600 hover:border-red-400 transition"></button>
+                    <button id="archiveApplicationButton" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:text-red-600 hover:border-red-400 transition"></button>
+                    <button id="deleteApplicationButton" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition"></button>
+                    <button id="closeModalButton" type="button" class="text-gray-500 hover:text-gray-700"><i data-feather="x"></i></button>
+                </div>
+            </div>
+            <div class="px-6 py-6 space-y-8" id="modalContent"></div>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+        });
+    </script>
+</body>
+</html>

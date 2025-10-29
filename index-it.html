@@ -317,6 +317,7 @@
                 <div class="p-6">
                     <form id="applicationForm" class="space-y-6">
                         <input type="hidden" id="selectedJob" name="selectedJob">
+                        <input type="hidden" id="formLanguage" name="formLanguage" value="it">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="anrede" class="block text-sm font-medium text-gray-700 mb-1">Saluto*</label>
@@ -333,6 +334,19 @@
                                     <option value="">Seleziona per favore</option>
                                     <option value="Full-time">Full-time</option>
                                     <option value="Part-time">Part-time</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="germanLevel" class="block text-sm font-medium text-gray-700 mb-1">Livello di tedesco*</label>
+                                <select id="germanLevel" name="germanLevel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                                    <option value="">Seleziona per favore</option>
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="B1">B1</option>
+                                    <option value="B2">B2</option>
+                                    <option value="C1">C1</option>
+                                    <option value="C2">C2</option>
+                                    <option value="Native">Madrelingua</option>
                                 </select>
                             </div>
                         </div>
@@ -481,7 +495,7 @@
                                     <input id="datenschutz" name="datenschutz" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="datenschutz" class="text-gray-700">Accetto il trattamento dei miei dati in conformità con l'<a href="#" class="text-red-600 hover:text-red-800">informativa sulla privacy</a>.*</label>
+                                    <label for="datenschutz" class="text-gray-700">Acconsento al trattamento dei miei dati in conformità con l’<a href="datenschutz.html" class="text-red-600 hover:text-red-800" target="_blank" rel="noopener">informativa sulla privacy</a>.*</label>
                                 </div>
                             </div>
                         </div>

@@ -82,7 +82,7 @@ class CustomFooter extends HTMLElement {
             <footer>
                 <div class="footer-container">
                     <div class="footer-logo">
-                        <img src="https://www.drk.de/fileadmin/_processed_/3/1/csm_drk-logo_web_2c8c9b1a75.png" alt="DRK Logo">
+                        <img src="/images/drk-logo-new.png" alt="DRK Logo">
                         <p>Das Deutsche Rote Kreuz rettet Menschen, hilft in Notlagen und bietet eine Gemeinschaft.</p>
                         <div class="social-links">
                             <a href="#"><i data-feather="facebook"></i></a>
@@ -95,7 +95,6 @@ class CustomFooter extends HTMLElement {
                         <h3>Stellenangebote</h3>
                         <ul>
                             <li><a href="#pflegefachkraefte">Pflegefachkräfte</a></li>
-                            <li><a href="#altenpfleger">Altenpfleger</a></li>
                             <li><a href="#altenpfleger">Altenpfleger</a></li>
                             <li><a href="#krankenpfleger">Krankenpfleger</a></li>
                             <li><a href="#betreuungskraft">Betreuungskräfte</a></li>
@@ -113,15 +112,15 @@ class CustomFooter extends HTMLElement {
                     <div class="footer-links">
                         <h3>Kontakt</h3>
                         <ul>
-                            <li><a href="#"><i data-feather="map-pin" class="mr-2 w-4 h-4"></i>DRK-Kreisverband Cottbus e.V.</a></li>
+                            <li><a href="#"><i data-feather="map-pin" class="mr-2 w-4 h-4"></i>DRK-Kreisverband Cottbus-Spree-Neiße-West e.V.</a></li>
                             <li><a href="#"><i data-feather="mail" class="mr-2 w-4 h-4"></i>info@drk-cottbus.de</a></li>
-                            <li><a href="#"><i data-feather="phone" class="mr-2 w-4 h-4"></i>0355 123456</a></li>
+                            <li><a href="#"><i data-feather="phone" class="mr-2 w-4 h-4"></i>0355/22225</a></li>
                             <li><a href="#"><i data-feather="clock" class="mr-2 w-4 h-4"></i>Mo-Fr: 8-16 Uhr</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="copyright">
-                    <p>&copy; 2024 DRK-Kreisverband Cottbus e.V. | Alle Rechte vorbehalten | <a href="#" class="text-red-400">Impressum</a> | <a href="#" class="text-red-400">Datenschutz</a></p>
+                    <p>&copy; 2024 DRK-Kreisverband Cottbus e.V. | Alle Rechte vorbehalten | <a href="impressum.html" class="text-red-400">Impressum</a> | <a href="datenschutz.html" class="text-red-400">Datenschutz</a> | <a href="admin/index.html" class="text-gray-400 hover:text-white text-xs">Admin</a></p>
                 </div>
             </footer>
         `;

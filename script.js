@@ -1,35 +1,104 @@
 
 let workExperienceCounter = 1;
 let educationCounter = 1;
-// Language selector functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const languageSelector = document.querySelector('.language-selector');
-    const languageDropdown = document.querySelector('.language-dropdown');
-    const languageLinks = document.querySelectorAll('.language-dropdown a');
-    
-    languageLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            // Here you would normally implement language change
-            // For now we'll just update the button text
-            const langText = this.textContent;
-            document.querySelector('.language-btn').innerHTML = `
-                <i data-feather="globe"></i>
-                ${lang.toUpperCase()}
-            `;
-            feather.replace();
-            
-            // TODO: Implement actual language switching
-            console.log('Switching to language:', lang);
-        });
-    });
-});
+
+const languageCode = (document.documentElement.lang || 'de').substring(0, 2).toLowerCase();
+const messageMap = {
+    de: {
+        success: 'Vielen Dank für Ihre Bewerbung! Wir melden uns zeitnah bei Ihnen.',
+        error: 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
+        submitting: 'Wird gesendet…'
+    },
+    en: {
+        success: 'Thank you for your application! We will get back to you shortly.',
+        error: 'Something went wrong. Please try again or contact us directly.',
+        submitting: 'Submitting…'
+    },
+    es: {
+        success: '¡Gracias por su solicitud! Nos pondremos en contacto con usted en breve.',
+        error: 'Se ha producido un error. Vuelva a intentarlo o contáctenos directamente.',
+        submitting: 'Enviando…'
+    },
+    it: {
+        success: 'Grazie per la tua candidatura! Ti ricontatteremo a breve.',
+        error: "Si è verificato un errore. Riprova o contattaci direttamente.",
+        submitting: 'Invio in corso…'
+    },
+    pt: {
+        success: 'Obrigado pela sua candidatura! Entraremos em contacto em breve.',
+        error: 'Ocorreu um erro. Tente novamente ou contacte-nos diretamente.',
+        submitting: 'A enviar…'
+    },
+    pl: {
+        success: 'Dziękujemy za aplikację! Skontaktujemy się z Tobą wkrótce.',
+        error: 'Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.',
+        submitting: 'Wysyłanie…'
+    },
+    cs: {
+        success: 'Děkujeme za Vaši přihlášku! Brzy se Vám ozveme.',
+        error: 'Došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte přímo.',
+        submitting: 'Odesílá se…'
+    },
+    ru: {
+        success: 'Спасибо за Вашу заявку! Мы свяжемся с вами в ближайшее время.',
+        error: 'Произошла ошибка. Попробуйте еще раз или свяжитесь с нами напрямую.',
+        submitting: 'Отправка…'
+    },
+    uk: {
+        success: 'Дякуємо за вашу заявку! Ми незабаром з вами зв’яжемося.',
+        error: 'Сталася помилка. Спробуйте ще раз або зв’яжіться з нами безпосередньо.',
+        submitting: 'Надсилання…'
+    }
+};
+
+const messages = messageMap[languageCode] || messageMap.de;
+
+function createStatusBanner() {
+    const status = document.createElement('div');
+    status.id = 'formStatus';
+    status.className = 'hidden px-4 py-3 rounded-lg text-sm border';
+    document.getElementById('applicationForm').prepend(status);
+    return status;
+}
+
+const statusBanner = createStatusBanner();
+
+function setStatus(type, text) {
+    if (!statusBanner) return;
+    statusBanner.textContent = text;
+    statusBanner.className = `px-4 py-3 rounded-lg text-sm border mt-2 ${
+        type === 'success'
+            ? 'bg-green-50 border-green-200 text-green-700'
+            : 'bg-red-50 border-red-200 text-red-700'
+    }`;
+    statusBanner.classList.remove('hidden');
+}
+
+function clearStatus() {
+    if (!statusBanner) return;
+    statusBanner.classList.add('hidden');
+    statusBanner.textContent = '';
+}
+
+function getFormLanguage() {
+    const lang = document.documentElement.lang || 'de';
+    return lang.substring(0, 2).toLowerCase();
+}
+
+function setFormLanguage() {
+    const formLanguageInput = document.getElementById('formLanguage');
+    if (formLanguageInput) {
+        formLanguageInput.value = getFormLanguage();
+    }
+}
+
 function showApplicationForm(jobTitle) {
     document.getElementById('jobTitle').textContent = jobTitle;
     document.getElementById('selectedJob').value = jobTitle;
+    setFormLanguage();
     document.getElementById('applicationModal').classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
+    clearStatus();
 }
 
 function hideApplicationForm() {
@@ -121,16 +190,7 @@ function removeElement(element) {
     element.remove();
 }
 
-document.getElementById('applicationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Here you would normally send the form data to your server
-    // For demonstration, we'll just show an alert
-    alert('Vielen Dank für Ihre Bewerbung! Wir werden uns in Kürze bei Ihnen melden.');
-    hideApplicationForm();
-    
-    // Reset form
-    this.reset();
+function resetDynamicSections() {
     document.getElementById('workExperienceContainer').innerHTML = `
         <div class="work-experience mb-4 p-4 border rounded-lg">
             <div class="grid md:grid-cols-2 gap-6 mb-4">
@@ -161,6 +221,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
             </div>
         </div>
     `;
+
     document.getElementById('educationContainer').innerHTML = `
         <div class="education mb-4 p-4 border rounded-lg">
             <div class="grid md:grid-cols-2 gap-6 mb-4">
@@ -191,6 +252,53 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
             </div>
         </div>
     `;
+
     workExperienceCounter = 1;
     educationCounter = 1;
+    feather.replace();
+}
+
+async function submitApplication(event) {
+    event.preventDefault();
+    clearStatus();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.set('formLanguage', getFormLanguage());
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonHTML = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = `<span class="flex items-center gap-2"><svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>${messages.submitting}</span>`;
+
+    try {
+        const response = await fetch('/api/applications', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+
+        setStatus('success', messages.success);
+        form.reset();
+        resetDynamicSections();
+        setFormLanguage();
+        setTimeout(() => {
+            hideApplicationForm();
+            clearStatus();
+        }, 1800);
+    } catch (error) {
+        console.error(error);
+        setStatus('error', messages.error);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHTML;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setFormLanguage();
+    document.getElementById('applicationForm').addEventListener('submit', submitApplication);
 });
