@@ -53,7 +53,7 @@ app.use('/uploads', express.static(UPLOAD_DIR));
 
 const attachmentsConfig = [
   { name: 'lebenslauf', maxCount: 1 },
-  { name: 'zeugnisse', maxCount: 1 },
+  { name: 'zeugnisse', maxCount: 10 },
   { name: 'bewerbungsfoto', maxCount: 1 },
   { name: 'bewerbungsvideo', maxCount: 1 }
 ];

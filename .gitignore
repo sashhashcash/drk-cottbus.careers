@@ -3,5 +3,5 @@ node_modules/
 uploads/*
 !uploads/.gitkeep
 .DS_Store
-datenschutz.html
-impressum.html
+key.txt
+key.txt.pub

@@ -28,7 +28,7 @@ const dashboardMessage = document.getElementById('dashboardMessage');
 
 const attachmentLabels = {
   lebenslauf: 'Lebenslauf',
-  zeugnisse: 'Zeugnisse',
+  zeugnisse: 'Zeugnisse / Abschlüsse',
   bewerbungsfoto: 'Bewerbungsfoto',
   bewerbungsvideo: 'Bewerbungsvideo'
 };
