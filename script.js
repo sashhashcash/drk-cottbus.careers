@@ -2,7 +2,7 @@
 // Configure API endpoint - update this when deploying backend
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:4000'
-    : 'https://your-railway-app.railway.app'; // TODO: Replace with your Railway URL
+    : 'https://drk-cottbuscareers-production.up.railway.app';
 
 let workExperienceCounter = 1;
 let educationCounter = 1;
