@@ -120,7 +120,7 @@ class CustomNavbar extends HTMLElement {
             </style>
             <nav>
                 <div class="logo-container">
-                    <img src="/images/drk-logo-new.png" alt="DRK Logo" class="logo-img">
+                                <img src="images/drk-logo-new.png" alt="DRK Logo" class="logo-img">
                     <div class="logo-text">
                         <span>DRK Cottbus</span>
                         <span class="logo-subtext">Stellenangebote</span>

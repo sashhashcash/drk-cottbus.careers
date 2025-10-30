@@ -1,4 +1,9 @@
 
+// Configure API endpoint - update this when deploying backend
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:4000'
+    : 'https://your-railway-app.railway.app'; // TODO: Replace with your Railway URL
+
 let workExperienceCounter = 1;
 let educationCounter = 1;
 
@@ -272,7 +277,7 @@ async function submitApplication(event) {
     submitButton.innerHTML = `<span class="flex items-center gap-2"><svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>${messages.submitting}</span>`;
 
     try {
-        const response = await fetch('/api/applications', {
+        const response = await fetch(`${API_BASE}/api/applications`, {
             method: 'POST',
             body: formData
         });

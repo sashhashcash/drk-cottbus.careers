@@ -82,7 +82,7 @@ class CustomFooter extends HTMLElement {
             <footer>
                 <div class="footer-container">
                     <div class="footer-logo">
-                        <img src="/images/drk-logo-new.png" alt="DRK Logo">
+                        <img src="images/drk-logo-new.png" alt="DRK Logo">
                         <p>Das Deutsche Rote Kreuz rettet Menschen, hilft in Notlagen und bietet eine Gemeinschaft.</p>
                         <div class="social-links">
                             <a href="#"><i data-feather="facebook"></i></a>
