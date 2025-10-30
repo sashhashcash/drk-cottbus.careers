@@ -46,7 +46,20 @@ const upload = multer({
   limits: { fileSize: MAX_FILE_SIZE_MB * 1024 * 1024 }
 });
 
-app.use(cors());
+// Configure CORS to allow requests from GitHub Pages
+const corsOptions = {
+  origin: [
+    'https://drk-cottbus.careers',
+    'https://sashhashcash.github.io',
+    'http://localhost:3000',
+    'http://localhost:5500',
+    'http://127.0.0.1:5500'
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 app.use('/uploads', express.static(UPLOAD_DIR));
@@ -124,15 +137,20 @@ function authMiddleware(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
+  console.log('🔐 Login attempt:', { email, hasPassword: !!password, expectedEmail: ADMIN_EMAIL });
+  
   if (!email || !password) {
+    console.log('❌ Login failed: Missing credentials');
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
   if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+    console.log('❌ Login failed: Invalid credentials');
     return res.status(401).json({ message: 'Invalid credentials' });
   }
 
   const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: '12h' });
+  console.log('✅ Login successful for:', email);
   res.json({ token, email });
 });
 
@@ -475,6 +493,16 @@ app.get('/api/applications/:id/export', authMiddleware, async (req, res) => {
   }
 
   doc.end();
+});
+
+// Health check endpoint
+app.get('/api/health', (_req, res) => {
+  res.json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    adminConfigured: !!process.env.ADMIN_EMAIL,
+    smtpConfigured: !!process.env.SMTP_HOST
+  });
 });
 
 app.use((err, _req, res, _next) => {
